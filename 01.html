@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>描点模态切换</title>
+<style type="text/css">
+	*
+	{
+		margin: 0;
+		padding: 0;
+	}
+	html,body
+	{
+		overflow: hidden;
+		height: 100%;
+	}
+	.wrap
+	{
+		width: 100%;
+		height: 100%;
+		/*background-color: #096;*/
+	}
+	.wrap img
+	{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.nav
+	{
+		position: absolute;
+		bottom: 50px;
+		width: 100%;
+		z-index: 9;
+		text-align: center;
+	}
+	.nav a
+	{
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		margin-right: 50px;
+		border: 3px dashed #fff;
+		border-radius: 50%;
+	}
+	.one
+	{
+		background: url(images/1.jpg) center/cover;
+	}
+	.two
+	{
+		background: url(images/2.jpg) center/cover;
+	}
+	.three
+	{
+		background: url(images/3.jpg) center/cover;
+	}
+	.four
+	{
+		background: url(images/4.jpg) center/cover;
+	}
+	.slide-right:target
+	{
+		z-index: 1;
+		animation: slideRight 1s;
+	}
+	@keyframes slideRight
+	{
+		from
+		{
+			transform: translateX(-30%);
+		}
+		to
+		{
+			transform: translateX(0);
+		}
+	}
+	.slide-left:target
+	{
+		z-index: 1;
+		animation: slideLeft 1s;
+	}
+	@keyframes slideLeft
+	{
+		from
+		{
+			transform: translateX(30%);
+		}
+		to
+		{
+			transform: translateX(0);
+		}
+	}
+	.rotate:target
+	{
+		z-index: 1;
+		animation: rote 1s;
+	}
+	@keyframes rote
+	{
+		from
+		{
+			transform: rotate(0deg) scale(0);
+		}
+		to
+		{
+			transform: rotate(360deg) scale(1);
+		}
+	}
+	.fade:target
+	{
+		z-index: 1;
+		animation: fade 1s;
+	}
+	@keyframes fade
+	{
+		from
+		{
+			transform: scale(2);
+			opacity: 0;
+		}
+		to
+		{
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<img class="slide-right" id="slide-right" src="images/1.jpg">
+		<img class="slide-left" id="slide-left"src="images/2.jpg">
+		<img class="rotate" id="rotate" src="images/3.jpg">
+		<img class="fade" id="fade" src="images/4.jpg">
+		<div class="nav">
+			<a class="one" href="#slide-right"></a>
+			<a class="two" href="#slide-left"></a>
+			<a class="three" href="#rotate"></a>
+			<a class="four" href="#fade"></a>
+		</div>
+	</div>
+</body>
+</html>
